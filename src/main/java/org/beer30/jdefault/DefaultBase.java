@@ -20,11 +20,8 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.RandomUtils;
 import org.yaml.snakeyaml.Yaml;
 
-import java.io.File;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
-import java.net.URLDecoder;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -48,12 +45,6 @@ public class DefaultBase {
 
 
         URL dictionaryUrl = Address.class.getClassLoader().getResource("META-INF/en.yml");
-        File dictionary = null;
-        try {
-            dictionary = new File(URLDecoder.decode(dictionaryUrl.getPath(), "UTF-8"));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
         Map valuesMap = (Map) yaml.load(findStream("META-INF/en.yml"));
         valuesMap = (Map) valuesMap.get(languageCode);
         fakeValuesMap = (Map<String, Object>) valuesMap.get("faker");
