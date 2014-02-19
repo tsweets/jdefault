@@ -3,6 +3,8 @@ package org.beer30.jdefault;
 import org.apache.commons.lang.math.RandomUtils;
 
 /**
+ * Default Data for generating fake addresses
+ *
  * @author tsweets
  *         Date: 2/10/14
  *         Time: 6:11 PM
@@ -15,7 +17,6 @@ public class Address extends DefaultBase {
     }
 
     public static String city() {
-        // Start String #{Name.last_name}#{city_suffix}
         return parse("address.city");
 
     }

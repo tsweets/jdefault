@@ -31,6 +31,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * Base Class for all default data classes
+ *
  * @author tsweets
  *         Date: 2/15/14
  *         Time: 12:08 PM
@@ -66,14 +68,27 @@ public class DefaultBase {
         return is;
     }
 
+    /**
+     * Fetches an Object from the dictionary
+     *
+     * @param key
+     * @return
+     */
     protected static Object fetch(String key) {
         List valuesArray = (List) fetchObject(key);
         return valuesArray.get(RandomUtils.nextInt(valuesArray.size()));
     }
 
+    /**
+     * Fetches a List of of Values
+     *
+     * @param key
+     * @return
+     */
     protected static String fetchList(String key) {
         List valuesArray = (List) fetchObject(key);
 
+        //TODO: Make this dynamic
         List<String> stringList1 = (List<String>) valuesArray.get(0);
         List<String> stringList2 = (List<String>) valuesArray.get(1);
         List<String> stringList3 = (List<String>) valuesArray.get(2);
