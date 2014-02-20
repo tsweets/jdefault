@@ -17,35 +17,75 @@
 package org.beer30.jdefault;
 
 /**
+ * class of generating default names
+ *
  * @author tsweets
  *         Date: 2/16/14
  *         Time: 4:59 PM
  */
 public class Name extends DefaultBase {
+
+    /**
+     * generates a random first name
+     *
+     * @return first name string
+     */
     public static String firstName() {
         return fetchString("name.first_name");
     }
 
+    /**
+     * generates a random middle name
+     *
+     * @return middle name string
+     */
     public static String middleName() {
         return fetchString("name.first_name");
     }
 
+    /**
+     * generates a random last name
+     *
+     * @return last name string
+     */
     public static String lastName() {
         return fetchString("name.last_name");
     }
 
+    /**
+     * generates a random full name in a random format
+     * like "Mr Tom Jones" or "Howard Wright"
+     *
+     * @return full name string
+     */
     public static String name() {
         return parse("name.name");
     }
 
+    /**
+     * generates random name prefix like "Mr" "Mrs"
+     *
+     * @return prefix string
+     */
     public static String prefix() {
         return fetchString("name.prefix");
     }
 
+    /**
+     * generates random name suffix like "Jr." "Phd"
+     *
+     * @return suffix string
+     */
     public static String suffix() {
         return fetchString("name.suffix");
     }
 
+    /**
+     * generates a random title
+     * ie "Lead Research Engineer"
+     *
+     * @return title string
+     */
     public static String title() {
         return fetchString("name.title.descriptor") + ' ' + fetchString("name.title.level") + ' ' + fetchString("name.title.job");
     }

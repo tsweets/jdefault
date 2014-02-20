@@ -16,7 +16,6 @@
 
 package org.beer30.jdefault;
 
-import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.math.RandomUtils;
 
 /**
@@ -25,17 +24,8 @@ import org.apache.commons.lang.math.RandomUtils;
  *         Time: 6:05 PM
  */
 public class Utils {
-    public static String randomNumberString(int length) {
-        char[] chars = "123456789".toCharArray();
-        return RandomStringUtils.random(length, 0, 8, false, false, chars);
-    }
 
-    public static int randomIntBetweenTwoNumbers(int min, int max){
-        int number = RandomUtils.nextInt(max - min);
-        return number + min;
-    }
-
-    public static <T extends Enum<?>> T randomEnum(Class<T> clazz){
+    public static <T extends Enum<?>> T randomEnum(Class<T> clazz) {
         int x = RandomUtils.nextInt(clazz.getEnumConstants().length);
         return clazz.getEnumConstants()[x];
     }

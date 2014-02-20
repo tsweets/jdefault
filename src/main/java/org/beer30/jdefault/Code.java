@@ -17,6 +17,8 @@
 package org.beer30.jdefault;
 
 /**
+ * Class for generating "Codes" like barcodes
+ *
  * @author tsweets
  *         Date: 2/15/14
  *         Time: 7:00 PM
@@ -26,14 +28,14 @@ public class Code extends DefaultBase {
     /**
      * Generates an English Language Publisher Code in the range of
      * 0-900000-xx-x to	0-949999-xx-x
-     * @return
+     *
+     * @return isbn as a string
      */
     public static String isbn() {
         StringBuffer stringBuffer = new StringBuffer("09");
-        stringBuffer.append(String.format("%06d",Utils.randomIntBetweenTwoNumbers(0,49999)));
-        stringBuffer.append(String.format("%02d",Utils.randomIntBetweenTwoNumbers(0,99)));
-        String numberString  = stringBuffer.toString();
-
+        stringBuffer.append(String.format("%06d", Number.randomIntBetweenTwoNumbers(0, 49999)));
+        stringBuffer.append(String.format("%02d", Number.randomIntBetweenTwoNumbers(0, 99)));
+        String numberString = stringBuffer.toString();
 
 
         int number = Integer.parseInt(numberString);
@@ -54,9 +56,9 @@ public class Code extends DefaultBase {
             checkDigit = (11 - (sum % 11)) + "";
         }
 
-      //  System.out.println("The full ISBN number is " + numberString+checkDigit);
+        //  System.out.println("The full ISBN number is " + numberString+checkDigit);
         String returnString = stringBuffer.toString();
-        returnString = returnString.substring(0,1) + "-" + returnString.substring(1,7) + "-" + returnString.substring(7,9) + "-" + checkDigit;
+        returnString = returnString.substring(0, 1) + "-" + returnString.substring(1, 7) + "-" + returnString.substring(7, 9) + "-" + checkDigit;
 
         return returnString;
     }

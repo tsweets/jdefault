@@ -1,3 +1,19 @@
+/*
+ * Copyright (c) 2014.  http://www.beer30.org
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package org.beer30.jdefault;
 
 import org.apache.commons.lang.math.RandomUtils;
@@ -22,6 +38,7 @@ public class Address extends DefaultBase {
 
     /**
      * Random City
+     *
      * @return string to represent a city
      */
     public static String city() {
@@ -31,6 +48,7 @@ public class Address extends DefaultBase {
 
     /**
      * random prefix for a city ie "North" "New"
+     *
      * @return prefix string
      */
     public static String cityPrefix() {
@@ -39,6 +57,7 @@ public class Address extends DefaultBase {
 
     /**
      * random city suffix ie "ton" "port"
+     *
      * @return suffix string
      */
     public static String citySuffix() {
@@ -47,6 +66,7 @@ public class Address extends DefaultBase {
 
     /**
      * random country - spelled out
+     *
      * @return country string
      */
     public static String country() {
@@ -55,6 +75,7 @@ public class Address extends DefaultBase {
 
     /**
      * Random latitude -90 to 90
+     *
      * @return latitude string
      */
     public static String latitude() {
@@ -63,6 +84,7 @@ public class Address extends DefaultBase {
 
     /**
      * Random longitude -180 to 180
+     *
      * @return longitude string
      */
     public static String longitude() {
@@ -72,6 +94,7 @@ public class Address extends DefaultBase {
 
     /**
      * Random secondary address ie "Apt 123"
+     *
      * @return secondary address string
      */
     public static String secondaryAddress() {
@@ -80,6 +103,7 @@ public class Address extends DefaultBase {
 
     /**
      * random state - spelled out
+     *
      * @return state string
      */
     public static String state() {
@@ -88,6 +112,7 @@ public class Address extends DefaultBase {
 
     /**
      * random 2 letter state - fifty main US states (no territories)
+     *
      * @return state code string
      */
     public static String stateAbbr() {
@@ -119,6 +144,7 @@ public class Address extends DefaultBase {
 
     /**
      * random street address
+     *
      * @return street address string
      */
     public static String streetAddress() {
@@ -127,6 +153,7 @@ public class Address extends DefaultBase {
 
     /**
      * random street address
+     *
      * @param includeSecondary append secondary
      * @return street address string
      */
@@ -136,6 +163,7 @@ public class Address extends DefaultBase {
 
     /**
      * random street name
+     *
      * @return street name string
      */
     public static String streetName() {
@@ -144,6 +172,7 @@ public class Address extends DefaultBase {
 
     /**
      * random street suffix ie "Lane", "Ave"
+     *
      * @return street suffix string
      */
     public static String streetSuffix() {
@@ -152,6 +181,7 @@ public class Address extends DefaultBase {
 
     /**
      * random timezone in  Area/Location format ie America/Denver
+     *
      * @return timezone string
      */
     public static String timeZone() {
@@ -160,6 +190,7 @@ public class Address extends DefaultBase {
 
     /**
      * random 5 digit number to represent a zip code
+     *
      * @return
      */
     public static String zipCode() {
@@ -168,6 +199,7 @@ public class Address extends DefaultBase {
 
     /**
      * random formatted zip code ie ###### or #####-#### or just a normal ######
+     *
      * @param randomFormat do a random format
      * @return zip code string
      */
@@ -175,7 +207,7 @@ public class Address extends DefaultBase {
         if (randomFormat) {
             return bothify(fetchString("address.postcode"));
         } else {
-            return Utils.randomNumberString(5);
+            return Number.randomNumberString(5);
         }
     }
 }

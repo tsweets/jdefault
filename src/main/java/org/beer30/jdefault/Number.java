@@ -17,25 +17,37 @@
 package org.beer30.jdefault;
 
 import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang.math.RandomUtils;
 
 /**
+ * random number generator
  * @author tsweets
  *         Date: 2/16/14
  *         Time: 5:08 PM
  */
 public class Number {
 
+    /**
+     * random number 0 to 9
+     *
+     * @return digit string
+     */
     public static String digit() {
-        return Utils.randomIntBetweenTwoNumbers(0,9) + "";
+        return randomIntBetweenTwoNumbers(0, 9) + "";
     }
 
+    /**
+     * random number string without 0 being possible as the first digit
+     * @param numberOfDigits length of string
+     * @return number string
+     */
     public static String number(int numberOfDigits) {
         if (numberOfDigits < 1) {
             return "";
         }
 
 
-        StringBuffer sb = new StringBuffer(Utils.randomIntBetweenTwoNumbers(1,9) + "");
+        StringBuffer sb = new StringBuffer(randomIntBetweenTwoNumbers(1, 9) + "");
 
         if (numberOfDigits == 1) {
             return sb.toString();
@@ -48,4 +60,26 @@ public class Number {
     }
 
 
+    /**
+     * random number string with zero possible in any position
+     *
+     * @param length of number string
+     * @return number string
+     */
+    public static String randomNumberString(int length) {
+        char[] chars = "0123456789".toCharArray();
+        return RandomStringUtils.random(length, 0, 9, false, false, chars);
+    }
+
+    /**
+     * generate a random number between 2 numbers - inclusive
+     *
+     * @param min lowest number to generate
+     * @param max max number to generate
+     * @return random number string
+     */
+    public static int randomIntBetweenTwoNumbers(int min, int max) {
+        int number = RandomUtils.nextInt(max - min);
+        return number + min;
+    }
 }

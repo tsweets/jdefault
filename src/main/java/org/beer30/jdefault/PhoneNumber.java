@@ -17,16 +17,27 @@
 package org.beer30.jdefault;
 
 /**
+ * random phone number generator
  * @author tsweets
  *         Date: 2/16/14
  *         Time: 6:49 PM
  */
 public class PhoneNumber extends DefaultBase {
 
-    public static String phoneNumber(){
-        return "555" + Utils.randomNumberString(7);
+    /**
+     * generate random phone number with 555 prefix - just like the movies
+     *
+     * @return phone number string
+     */
+    public static String phoneNumber() {
+        return Number.number(3) + "555" + Number.randomNumberString(4);
     }
 
+    /**
+     * random phone number with random format
+     * ie 303-555-1212 2221231234
+     * @return number string
+     */
     public static String phoneNumberFormatted() {
         return numerify(fetchString("phone_number.formats"));
     }

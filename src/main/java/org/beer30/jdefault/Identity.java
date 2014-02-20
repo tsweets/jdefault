@@ -17,25 +17,38 @@
 package org.beer30.jdefault;
 
 /**
+ * Class to create default data for a person's identity
+ *
  * @author tsweets
  *         Date: 2/11/14
  *         Time: 9:55 PM
  */
 public class Identity {
 
+    /**
+     * un-formatted random SSN
+     *
+     * @return SSN String #########
+     */
     public static String ssn() {
         return ssn(false);
     }
 
+    /**
+     * random SSN
+     *
+     * @param formatted if true formats SSN to ###-##-####
+     * @return ssn string
+     */
     public static String ssn(boolean formatted) {
         if (!formatted) {
-            return Utils.randomNumberString(9);
+            return Number.randomNumberString(9);
         } else {
-            StringBuffer ssnString = new StringBuffer(Utils.randomNumberString(3));
+            StringBuffer ssnString = new StringBuffer(Number.randomNumberString(3));
             ssnString.append("-");
-            ssnString.append(Utils.randomNumberString(2));
+            ssnString.append(Number.randomNumberString(2));
             ssnString.append("-");
-            ssnString.append(Utils.randomNumberString(4));
+            ssnString.append(Number.randomNumberString(4));
             return ssnString.toString();
         }
 
@@ -44,12 +57,13 @@ public class Identity {
     /**
      * Creates a Driver's license in the format of 2 Letter State Code, Dash, 8 Digit Random Number
      * ie CO-12345678
-     * @return
+     *
+     * @return driver's license string
      */
     public static String driversLicense() {
         StringBuffer dl = new StringBuffer(Address.stateAbbr());
         dl.append("-");
-        dl.append(Utils.randomNumberString(8));
+        dl.append(Number.randomNumberString(8));
 
         return dl.toString();
     }

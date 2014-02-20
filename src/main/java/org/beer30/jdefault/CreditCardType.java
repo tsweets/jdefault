@@ -17,10 +17,12 @@
 package org.beer30.jdefault;
 
 /**
-* @author tsweets
-*         Date: 2/15/14
-*         Time: 1:04 PM
-*/
+ * Enum of credit card types
+ *
+ * @author tsweets
+ *         Date: 2/15/14
+ *         Time: 1:04 PM
+ */
 public enum CreditCardType {
-    VISA,MASTERCARD,AMEX,DISCOVER;
+    VISA, MASTERCARD, AMEX, DISCOVER;
 }

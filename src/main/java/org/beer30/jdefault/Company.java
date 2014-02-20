@@ -17,6 +17,8 @@
 package org.beer30.jdefault;
 
 /**
+ * Class used for generated default data associated with a company
+ *
  * @author tsweets
  *         Date: 2/15/14
  *         Time: 7:54 PM
@@ -24,42 +26,53 @@ package org.beer30.jdefault;
 public class Company extends DefaultBase {
 
     /**
-     *  When a straight answer won't do, BS to the rescue!.
-     * @return
+     * When a straight answer won't do, BS to the rescue!.
+     * ie "implement vertical partnerships"
+     *
+     * @return bs string
      */
     public static String bs() {
-       return fetchList("company.bs");
+        return fetchList("company.bs");
     }
 
     /**
-     *  Generate a buzzword-laden catch phrase.
-     * @return
+     * Generate a buzzword-laden catch phrase.
+     * ie "Advanced 3rd generation application"
+     *
+     * @return catch phrase string
      */
     public static String catchPhrase() {
         return fetchList("company.buzzwords");
     }
 
+    /**
+     * Generate a random company's DUNS number
+     *
+     * @return DUNS string
+     */
     public static String dunsNumber() {
-        return Utils.randomIntBetweenTwoNumbers(1,9) + Utils.randomNumberString(8);
+        return Number.randomIntBetweenTwoNumbers(1, 9) + Number.randomNumberString(8);
     }
 
+    /**
+     * Generate a random company name
+     * ie Jones LLC
+     *
+     * @return company name string
+     */
     public static String name() {
         return parse("company.name");
     }
 
+    /**
+     * Generate a random company suffix
+     * ie "and Sons"
+     *
+     * @return
+     */
     public static String suffix() {
         return fetchString("company.suffix");
     }
 
-   /* def translate(*args)
-    opts = args.last.is_a?(Hash) ? args.pop : {}
-    opts[:locale] ||= Faker::Config.locale
-    opts[:raise] = true
-            I18n.translate(*(args.push(opts)))
-    rescue I18n::MissingTranslationData
-    # Super-simple fallback -- fallback to en if the
-    # translation was missing.  If the translation isn't
-            # in en either, then it will raise again.
-            I18n.translate(*(args.push(opts.merge(:locale => :en))))
-    end*/
+
 }

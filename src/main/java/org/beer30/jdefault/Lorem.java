@@ -24,33 +24,67 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * generates everyone's favorite placeholder text
  * @author tsweets
  *         Date: 2/15/14
  *         Time: 9:18 PM
  */
 public class Lorem extends DefaultBase {
 
+    /**
+     * generates random characters 255 long
+     *
+     * @return random character string
+     */
     public static String characters() {
         return characters(255);
     }
 
+    /**
+     * generates random characters
+     * @param count of characters to generate
+     * @return random character string
+     */
     public static String characters(int count) {
         return RandomStringUtils.randomAlphabetic(count).toLowerCase();
 
     }
 
+    /**
+     * random lorem paragraph with 3 to 6 sentences
+     * @return paragraph string
+     */
     public static String paragraph(){
         return paragraph(3,false,3);
     }
+
+    /**
+     * random lorem paragraph
+     * @param sentenceCount  min number of sentences
+     * @param supplemental if true add additional words
+     * @param randomSentencesToAdd max random number of sentences to add
+     * @return paragraph string
+     */
     public static String paragraph(int sentenceCount, boolean supplemental, int randomSentencesToAdd) {
         String paragraphString = sentences(sentenceCount + RandomUtils.nextInt(randomSentencesToAdd),supplemental);
 
         return paragraphString;
     }
 
+    /**
+     * generate 3 paragraphs
+     * @return paragraphs string
+     */
     public static String paragraphs() {
         return paragraphs(3, false);
     }
+
+    /**
+     * generate paragraphs
+     * @param paragraphCount number of paragraphs to generate
+     * @param supplemental if true add additional words
+     * @return paragraphs string
+     */
     public static String paragraphs(int paragraphCount, boolean supplemental) {
         List<String> paragraphList = new ArrayList<String>();
         for (int i = 0; i < paragraphCount; i++) {
@@ -61,9 +95,22 @@ public class Lorem extends DefaultBase {
         return joined;
 
     }
+
+    /**
+     * generate sentence with at least 4 words and up to 6 random words added
+     * @return sentence string
+     */
     public static String sentence() {
         return sentence(4,false,6);
     }
+
+    /**
+     * generate sentence
+     * @param wordCount min number of words
+     * @param supplemental if true add additional word to each word
+     * @param randomWordsToAdd number of random words added
+     * @return sentence string
+     */
     public static String sentence(int wordCount, boolean supplemental, int randomWordsToAdd) {
         List<String> wordList = words(wordCount + RandomUtils.nextInt(randomWordsToAdd), supplemental);
         String sentenceString = StringUtils.join(wordList, " ");
@@ -71,9 +118,20 @@ public class Lorem extends DefaultBase {
         return StringUtils.capitalize(sentenceString+".");
     }
 
+    /**
+     * generate 3 sentences
+     * @return sentence string
+     */
     public static String sentences() {
         return sentences(3,false);
     }
+
+    /**
+     * generate sentences
+     * @param sentenceCount number of sentences
+     * @param supplemental  if true add additional word to each word
+     * @return sentence string
+     */
     public static String sentences(int sentenceCount, boolean supplemental) {
         List<String> sentenceList = new ArrayList<String>();
         for (int i = 0; i< sentenceCount; i++) {
@@ -84,14 +142,29 @@ public class Lorem extends DefaultBase {
         return sentenceString;
 
     }
+
+    /**
+     * generate a random word
+     * @return word string
+     */
     public static String word() {
         return fetchString("lorem.words");
     }
 
+    /**
+     * generate a list of 3 random words
+     * @return word list
+     */
     public List<String> words() {
         return words(3, false);
     }
 
+    /**
+     * generate a list of random words
+     * @param count of words to add to the list
+     * @param supplemental if true add additional word to each word
+     * @return word list
+     */
     public static List<String> words(int count, boolean supplemental) {
         List<String> words = new ArrayList<String>();
         for (int i = 0; i < count; i++) {

@@ -17,17 +17,36 @@
 package org.beer30.jdefault;
 
 /**
+ * class used for describing e-commerce activity and products
+ *
  * @author tsweets
  *         Date: 2/15/14
  *         Time: 7:48 PM
  */
 public class Commerce extends DefaultBase {
+    /**
+     * Generates a random color
+     *
+     * @return string name of color
+     */
     public static String color() {
         return fetchString("commerce.color");
     }
+
+    /**
+     * Generates a random store department
+     *
+     * @return department string
+     */
     public static String department() {
         return fetchString("commerce.department");
     }
+
+    /**
+     * Generates a random product name like "Small rubber shirt"
+     *
+     * @return product name string
+     */
     public static String productName() {
         return fetchString("commerce.product_name.adjective") + ' ' + fetchString("commerce.product_name.material") + ' ' + fetchString("commerce.product_name.product");
     }
