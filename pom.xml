@@ -49,7 +49,7 @@
     <scm>
         <connection>scm:git:git@github.com:tsweets/jdefault.git</connection>
         <developerConnection>scm:git:git@github.com:tsweets/jdefault.git</developerConnection>
-        <url>https://github.com/tsweets/jdefault</url>
+        <url>git@github.com:tsweets/jdefault.git</url>
     </scm>
 
     <properties>
