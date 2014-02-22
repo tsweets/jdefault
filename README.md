@@ -69,23 +69,23 @@ Running this code
 
 Results in:
 
->   org.beer30.jdefault.sample.Example$Person@a5c18ff[
->       firstName=Alvera
->       lastName=Leffler
->       middleName=Sebastian
->       suffix=DVM
->       address1=8480 Kemmer Branch Apt. 244
->       address2=<null>
->       city=Jacobsfurt
->       postalCode=41552
->       state=GA
->       ssn=446-01-7876
->       email=bfahey63@example.net
->       quote=Explicabo natus enim exercitationem et nulla enim.
->       phone=1-347-270-5849
->       employer=Mitchell Inc
->       age=22
->   ]
+    org.beer30.jdefault.sample.Example$Person@a5c18ff[
+        firstName=Alvera
+        lastName=Leffler
+        middleName=Sebastian
+        suffix=DVM
+        address1=8480 Kemmer Branch Apt. 244
+        address2=<null>
+        city=Jacobsfurt
+        postalCode=41552
+        state=GA
+        ssn=446-01-7876
+        email=bfahey63@example.net
+        quote=Explicabo natus enim exercitationem et nulla enim.
+        phone=1-347-270-5849
+        employer=Mitchell Inc
+        age=22
+    ]
 
 
 
