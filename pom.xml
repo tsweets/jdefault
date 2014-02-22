@@ -47,7 +47,7 @@
     </issueManagement>
 
     <scm>
-        <connection>scm:git:git@github.com:tsweets/jdefault.git</connection>
+        <connection>scm:git:https://github.com/tsweets/jdefault.git</connection>
         <developerConnection>scm:git:git@github.com:tsweets/jdefault.git</developerConnection>
         <url>https://github.com/tsweets/jdefault</url>
     </scm>
