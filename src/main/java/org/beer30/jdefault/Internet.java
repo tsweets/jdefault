@@ -61,7 +61,7 @@ public class Internet extends DefaultBase {
      * @return domain word string
      */
     public static String domainWord() {
-        return Name.lastName().toLowerCase();
+        return fixNonWord(Name.lastName().toLowerCase());
     }
 
     /**
@@ -101,12 +101,23 @@ public class Internet extends DefaultBase {
     }
 
     /**
+     * replace all special (as well as Unicode) characters leaving A-Z Chars and Digits
+     * @param string
+     * @return
+     */
+    public static String fixNonWord(String string) {
+        String resultString = string.replaceAll("[^\\p{L}\\p{Nd}]", "");
+
+        return resultString;
+    }
+
+    /**
      * generate a random free email address like name@gmail.com or name@yahoo.com
      *
      * @return email string
      */
     public static String freeEmail() {
-        return Name.firstName() + "@" + fetchString("internet.free_email");
+        return fixNonWord(Name.firstName()) + "@" + fetchString("internet.free_email");
 
     }
 
@@ -208,6 +219,6 @@ public class Internet extends DefaultBase {
      * @return
      */
     public static String userName() {
-        return StringUtils.left(Name.firstName(), 1).toLowerCase() + Name.lastName().toLowerCase() + Number.randomNumberString(2);
+        return fixNonWord(StringUtils.left(Name.firstName(), 1).toLowerCase() + Name.lastName().toLowerCase() + Number.randomNumberString(2));
     }
 }
