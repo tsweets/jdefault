@@ -25,11 +25,12 @@ import java.util.List;
 
 /**
  * generates everyone's favorite placeholder text
+ *
  * @author tsweets
  *         Date: 2/15/14
  *         Time: 9:18 PM
  */
-public class Lorem extends DefaultBase {
+public class JDefaultLorem extends JDefaultBase {
 
     /**
      * generates random characters 255 long
@@ -42,6 +43,7 @@ public class Lorem extends DefaultBase {
 
     /**
      * generates random characters
+     *
      * @param count of characters to generate
      * @return random character string
      */
@@ -52,27 +54,30 @@ public class Lorem extends DefaultBase {
 
     /**
      * random lorem paragraph with 3 to 6 sentences
+     *
      * @return paragraph string
      */
-    public static String paragraph(){
-        return paragraph(3,false,3);
+    public static String paragraph() {
+        return paragraph(3, false, 3);
     }
 
     /**
      * random lorem paragraph
-     * @param sentenceCount  min number of sentences
-     * @param supplemental if true add additional words
+     *
+     * @param sentenceCount        min number of sentences
+     * @param supplemental         if true add additional words
      * @param randomSentencesToAdd max random number of sentences to add
      * @return paragraph string
      */
     public static String paragraph(int sentenceCount, boolean supplemental, int randomSentencesToAdd) {
-        String paragraphString = sentences(sentenceCount + RandomUtils.nextInt(randomSentencesToAdd),supplemental);
+        String paragraphString = sentences(sentenceCount + RandomUtils.nextInt(randomSentencesToAdd), supplemental);
 
         return paragraphString;
     }
 
     /**
      * generate 3 paragraphs
+     *
      * @return paragraphs string
      */
     public static String paragraphs() {
@@ -81,14 +86,15 @@ public class Lorem extends DefaultBase {
 
     /**
      * generate paragraphs
+     *
      * @param paragraphCount number of paragraphs to generate
-     * @param supplemental if true add additional words
+     * @param supplemental   if true add additional words
      * @return paragraphs string
      */
     public static String paragraphs(int paragraphCount, boolean supplemental) {
         List<String> paragraphList = new ArrayList<String>();
         for (int i = 0; i < paragraphCount; i++) {
-            paragraphList.add(paragraph(3,supplemental,3));
+            paragraphList.add(paragraph(3, supplemental, 3));
         }
 
         String joined = StringUtils.join(paragraphList, "\n\n");
@@ -98,16 +104,18 @@ public class Lorem extends DefaultBase {
 
     /**
      * generate sentence with at least 4 words and up to 6 random words added
+     *
      * @return sentence string
      */
     public static String sentence() {
-        return sentence(4,false,6);
+        return sentence(4, false, 6);
     }
 
     /**
      * generate sentence
-     * @param wordCount min number of words
-     * @param supplemental if true add additional word to each word
+     *
+     * @param wordCount        min number of words
+     * @param supplemental     if true add additional word to each word
      * @param randomWordsToAdd number of random words added
      * @return sentence string
      */
@@ -115,36 +123,39 @@ public class Lorem extends DefaultBase {
         List<String> wordList = words(wordCount + RandomUtils.nextInt(randomWordsToAdd), supplemental);
         String sentenceString = StringUtils.join(wordList, " ");
 
-        return StringUtils.capitalize(sentenceString+".");
+        return StringUtils.capitalize(sentenceString + ".");
     }
 
     /**
      * generate 3 sentences
+     *
      * @return sentence string
      */
     public static String sentences() {
-        return sentences(3,false);
+        return sentences(3, false);
     }
 
     /**
      * generate sentences
+     *
      * @param sentenceCount number of sentences
      * @param supplemental  if true add additional word to each word
      * @return sentence string
      */
     public static String sentences(int sentenceCount, boolean supplemental) {
         List<String> sentenceList = new ArrayList<String>();
-        for (int i = 0; i< sentenceCount; i++) {
-            sentenceList.add(sentence(3,supplemental,6));
+        for (int i = 0; i < sentenceCount; i++) {
+            sentenceList.add(sentence(3, supplemental, 6));
         }
 
-        String sentenceString = StringUtils.join(sentenceList," ");
+        String sentenceString = StringUtils.join(sentenceList, " ");
         return sentenceString;
 
     }
 
     /**
      * generate a random word
+     *
      * @return word string
      */
     public static String word() {
@@ -153,6 +164,7 @@ public class Lorem extends DefaultBase {
 
     /**
      * generate a list of 3 random words
+     *
      * @return word list
      */
     public List<String> words() {
@@ -161,7 +173,8 @@ public class Lorem extends DefaultBase {
 
     /**
      * generate a list of random words
-     * @param count of words to add to the list
+     *
+     * @param count        of words to add to the list
      * @param supplemental if true add additional word to each word
      * @return word list
      */

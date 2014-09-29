@@ -23,7 +23,7 @@ package org.beer30.jdefault;
  *         Date: 2/15/14
  *         Time: 7:54 PM
  */
-public class Company extends DefaultBase {
+public class JDefaultCompany extends JDefaultBase {
 
     /**
      * When a straight answer won't do, BS to the rescue!.
@@ -51,7 +51,7 @@ public class Company extends DefaultBase {
      * @return DUNS string
      */
     public static String dunsNumber() {
-        return Number.randomIntBetweenTwoNumbers(1, 9) + Number.randomNumberString(8);
+        return JDefaultNumber.randomIntBetweenTwoNumbers(1, 9) + JDefaultNumber.randomNumberString(8);
     }
 
     /**

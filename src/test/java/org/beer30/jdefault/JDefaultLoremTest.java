@@ -27,88 +27,88 @@ import java.util.List;
  *         Date: 2/15/14
  *         Time: 9:59 PM
  */
-public class LoremTest {
+public class JDefaultLoremTest {
     @Test
     public void testCharacters() throws Exception {
-        String s = Lorem.characters();
+        String s = JDefaultLorem.characters();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("characters: " +s);
+        System.out.println("characters: " + s);
     }
 
     @Test
     public void testCharacters1() throws Exception {
-        String s = Lorem.characters(10);
+        String s = JDefaultLorem.characters(10);
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("characters: " +s);
+        System.out.println("characters: " + s);
     }
 
     @Test
     public void testParagraph() throws Exception {
-        String s = Lorem.paragraph();
+        String s = JDefaultLorem.paragraph();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("paragraph: " +s);
+        System.out.println("paragraph: " + s);
     }
 
     @Test
     public void testParagraph1() throws Exception {
-        String s = Lorem.paragraph(3,true,5);
+        String s = JDefaultLorem.paragraph(3, true, 5);
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("paragraph: " +s);
+        System.out.println("paragraph: " + s);
     }
 
     @Test
     public void testParagraphs() throws Exception {
-        String s = Lorem.paragraphs();
+        String s = JDefaultLorem.paragraphs();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("paragraphs: " +s);
+        System.out.println("paragraphs: " + s);
     }
 
     @Test
     public void testParagraphs1() throws Exception {
-        String s = Lorem.paragraphs(3,true);
+        String s = JDefaultLorem.paragraphs(3, true);
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("paragraphs: " +s);
+        System.out.println("paragraphs: " + s);
     }
 
     @Test
     public void testSentence() throws Exception {
-        String s = Lorem.sentence();
+        String s = JDefaultLorem.sentence();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("sentence: " +s);
+        System.out.println("sentence: " + s);
     }
 
     @Test
     public void testSentence1() throws Exception {
-        String s = Lorem.sentence(10,true,5);
+        String s = JDefaultLorem.sentence(10, true, 5);
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("sentence: " +s);
+        System.out.println("sentence: " + s);
     }
 
     @Test
     public void testSentences() throws Exception {
-        String s = Lorem.sentences();
+        String s = JDefaultLorem.sentences();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("sentences: " +s);
+        System.out.println("sentences: " + s);
     }
 
     @Test
     public void testSentences1() throws Exception {
-        String s = Lorem.sentences(3,true);
+        String s = JDefaultLorem.sentences(3, true);
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("sentences: " +s);
+        System.out.println("sentences: " + s);
     }
 
     @Test
     public void testWord() throws Exception {
-        String s = Lorem.word();
+        String s = JDefaultLorem.word();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("word: " +s);
+        System.out.println("word: " + s);
     }
 
     @Test
     public void testWords1() throws Exception {
-        List<String> s = Lorem.words(10,true);
+        List<String> s = JDefaultLorem.words(10, true);
         Assert.assertTrue(StringUtils.isNotEmpty(s.get(0)));
-        System.out.println("words: " +s);
+        System.out.println("words: " + s);
     }
 }

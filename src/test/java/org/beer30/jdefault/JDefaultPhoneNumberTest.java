@@ -16,30 +16,30 @@
 
 package org.beer30.jdefault;
 
+import org.apache.commons.lang.StringUtils;
+import org.junit.Assert;
+import org.junit.Test;
+
 /**
- * random phone number generator
  * @author tsweets
  *         Date: 2/16/14
- *         Time: 6:49 PM
+ *         Time: 6:51 PM
  */
-public class PhoneNumber extends DefaultBase {
+public class JDefaultPhoneNumberTest {
+    @Test
+    public void testPhoneNumber() throws Exception {
+        String s = JDefaultPhoneNumber.phoneNumber();
+        Assert.assertTrue(StringUtils.isNotEmpty(s));
+        Assert.assertEquals(10, s.length());
+        System.out.println("Phone Number: " + s);
 
-    /**
-     * generate random phone number with 555 prefix - just like the movies
-     *
-     * @return phone number string
-     */
-    public static String phoneNumber() {
-        return Number.number(3) + "555" + Number.randomNumberString(4);
     }
 
-    /**
-     * random phone number with random format
-     * ie 303-555-1212 2221231234
-     * @return number string
-     */
-    public static String phoneNumberFormatted() {
-        return numerify(fetchString("phone_number.formats"));
-    }
+    @Test
+    public void testPhoneNumberFormatted() throws Exception {
+        String s = JDefaultPhoneNumber.phoneNumberFormatted();
+        Assert.assertTrue(StringUtils.isNotEmpty(s));
+        System.out.println("Phone Formatted: " + s);
 
+    }
 }

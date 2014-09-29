@@ -28,7 +28,7 @@ import java.util.Date;
  *         Date: 2/15/14
  *         Time: 12:10 PM
  */
-public class Business {
+public class JDefaultBusiness {
 
     /**
      * Typically Cards are good for 3 years. Will create a random date between 24 and 48 months
@@ -37,7 +37,7 @@ public class Business {
      */
     public static Date creditCardExpiryDate() {
         DateTime dateTime = new DateTime();
-        DateTime addedMonths = dateTime.plusMonths(Number.randomIntBetweenTwoNumbers(24, 48));
+        DateTime addedMonths = dateTime.plusMonths(JDefaultNumber.randomIntBetweenTwoNumbers(24, 48));
         return addedMonths.dayOfMonth().withMaximumValue().toDate();
     }
 
@@ -48,32 +48,32 @@ public class Business {
      * @param type of credit card number to create
      * @return credit card number string
      */
-    public static String creditCardNumber(CreditCardType type) {
+    public static String creditCardNumber(JDefaultCreditCardType type) {
         String ccNumber = null;
         switch (type) {
             case VISA: {
                 StringBuffer tempCC = new StringBuffer("4");
-                tempCC.append(Number.randomNumberString(14));
+                tempCC.append(JDefaultNumber.randomNumberString(14));
                 ccNumber = tempCC.append(+generateCheckDigit(tempCC.toString())).toString();
                 break;
             }
             case MASTERCARD: {
                 StringBuffer tempCC = new StringBuffer("5");
-                tempCC.append(Number.randomIntBetweenTwoNumbers(1, 5));
-                tempCC.append(Number.randomNumberString(13));
+                tempCC.append(JDefaultNumber.randomIntBetweenTwoNumbers(1, 5));
+                tempCC.append(JDefaultNumber.randomNumberString(13));
                 ccNumber = tempCC.append(+generateCheckDigit(tempCC.toString())).toString();
                 break;
             }
             case AMEX: {
                 StringBuffer tempCC = new StringBuffer("3");
-                tempCC.append(Number.randomIntBetweenTwoNumbers(4, 7));
-                tempCC.append(Number.randomNumberString(12));
+                tempCC.append(JDefaultNumber.randomIntBetweenTwoNumbers(4, 7));
+                tempCC.append(JDefaultNumber.randomNumberString(12));
                 ccNumber = tempCC.append(+generateCheckDigit(tempCC.toString())).toString();
                 break;
             }
             case DISCOVER: {
                 StringBuffer tempCC = new StringBuffer("6011");
-                tempCC.append(Number.randomNumberString(11));
+                tempCC.append(JDefaultNumber.randomNumberString(11));
                 ccNumber = tempCC.append(+generateCheckDigit(tempCC.toString())).toString();
                 break;
             }
@@ -84,10 +84,10 @@ public class Business {
     /**
      * Return a Random Credit Card Type
      *
-     * @return random CreditCardType
+     * @return random JDefaultCreditCardType
      */
-    public static CreditCardType creditCardType() {
-        return Utils.randomEnum(CreditCardType.class);
+    public static JDefaultCreditCardType creditCardType() {
+        return JDefaultUtils.randomEnum(JDefaultCreditCardType.class);
     }
 
     private static int generateCheckDigit(String ccNumber) {

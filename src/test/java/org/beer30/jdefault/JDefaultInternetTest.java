@@ -25,105 +25,105 @@ import org.junit.Test;
  *         Date: 2/16/14
  *         Time: 7:06 PM
  */
-public class InternetTest {
+public class JDefaultInternetTest {
     @Test
     public void testDomainName() throws Exception {
-        String s = Internet.domainName();
+        String s = JDefaultInternet.domainName();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("domainName: " +s);
+        System.out.println("domainName: " + s);
     }
 
     @Test
     public void testDomainSuffix() throws Exception {
-        String s = Internet.domainSuffix();
+        String s = JDefaultInternet.domainSuffix();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("domainSuffix: " +s);
+        System.out.println("domainSuffix: " + s);
     }
 
     @Test
     public void testDomainWord() throws Exception {
-        String s = Internet.domainWord();
+        String s = JDefaultInternet.domainWord();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("domainWord: " +s);
+        System.out.println("domainWord: " + s);
 
     }
 
     @Test
     public void testEmail() throws Exception {
-        String s = Internet.email();
+        String s = JDefaultInternet.email();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("email: " +s);
+        System.out.println("email: " + s);
 
     }
 
     @Test
     public void testEmail1() throws Exception {
-        String s = Internet.email("tony");
+        String s = JDefaultInternet.email("tony");
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("email(tony): " +s);
+        System.out.println("email(tony): " + s);
     }
 
     @Test
     public void testFixUmlauts() throws Exception {
-        String s = Internet.fixUmlauts(Lorem.word());
+        String s = JDefaultInternet.fixUmlauts(JDefaultLorem.word());
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("fixUmlauts: " +s);
+        System.out.println("fixUmlauts: " + s);
     }
 
     @Test
     public void testFreeEmail() throws Exception {
-        String s = Internet.freeEmail(Name.firstName());
+        String s = JDefaultInternet.freeEmail(JDefaultName.firstName());
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("freeEmail: " +s);
+        System.out.println("freeEmail: " + s);
     }
 
     @Test
     public void testFreeEmail1() throws Exception {
-        String s = Internet.freeEmail();
+        String s = JDefaultInternet.freeEmail();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("freeEmail: " +s);
+        System.out.println("freeEmail: " + s);
     }
 
     @Test
     public void testIpV4Address() throws Exception {
-        String s = Internet.ipV4Address();
+        String s = JDefaultInternet.ipV4Address();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("ipv4: " +s);
+        System.out.println("ipv4: " + s);
     }
 
     @Test
     public void testIpV6Address() throws Exception {
-        String s = Internet.ipV6Address();
+        String s = JDefaultInternet.ipV6Address();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("ipv6: " +s);
+        System.out.println("ipv6: " + s);
     }
 
     @Test
     public void testPassword() throws Exception {
-        String s = Internet.password();
+        String s = JDefaultInternet.password();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("password: " +s);
+        System.out.println("password: " + s);
     }
 
     @Test
     public void testSafeEmail() throws Exception {
-        String s = Internet.safeEmail();
+        String s = JDefaultInternet.safeEmail();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("safeEmail: " +s);
+        System.out.println("safeEmail: " + s);
     }
 
     @Test
     public void testUrl() throws Exception {
-        String s = Internet.url();
+        String s = JDefaultInternet.url();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        Assert.assertTrue(StringUtils.contains(s,"http://"));
-        System.out.println("url: " +s);
+        Assert.assertTrue(StringUtils.contains(s, "http://"));
+        System.out.println("url: " + s);
     }
 
     @Test
     public void testUserName() throws Exception {
-        String s = Internet.userName();
+        String s = JDefaultInternet.userName();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("UserName: " +s);
+        System.out.println("UserName: " + s);
     }
 }

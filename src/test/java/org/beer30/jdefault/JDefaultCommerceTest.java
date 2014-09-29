@@ -22,24 +22,28 @@ import org.junit.Test;
 
 /**
  * @author tsweets
- *         Date: 2/16/14
- *         Time: 6:51 PM
+ *         Date: 2/15/14
+ *         Time: 7:50 PM
  */
-public class PhoneNumberTest {
+public class JDefaultCommerceTest {
     @Test
-    public void testPhoneNumber() throws Exception {
-        String s = PhoneNumber.phoneNumber();
+    public void testColor() throws Exception {
+        String s = JDefaultCommerce.color();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        Assert.assertEquals(10,s.length());
-        System.out.println("Phone Number: " +s);
-
+        System.out.println(s);
     }
 
     @Test
-    public void testPhoneNumberFormatted() throws Exception {
-        String s = PhoneNumber.phoneNumberFormatted();
+    public void testDepartment() throws Exception {
+        String s = JDefaultCommerce.department();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("Phone Formatted: " +s);
+        System.out.println(s);
+    }
 
+    @Test
+    public void testProductName() throws Exception {
+        String s = JDefaultCommerce.productName();
+        Assert.assertTrue(StringUtils.isNotEmpty(s));
+        System.out.println(s);
     }
 }

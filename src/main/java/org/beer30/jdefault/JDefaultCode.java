@@ -23,7 +23,7 @@ package org.beer30.jdefault;
  *         Date: 2/15/14
  *         Time: 7:00 PM
  */
-public class Code extends DefaultBase {
+public class JDefaultCode extends JDefaultBase {
 
     /**
      * Generates an English Language Publisher Code in the range of
@@ -33,8 +33,8 @@ public class Code extends DefaultBase {
      */
     public static String isbn() {
         StringBuffer stringBuffer = new StringBuffer("09");
-        stringBuffer.append(String.format("%06d", Number.randomIntBetweenTwoNumbers(0, 49999)));
-        stringBuffer.append(String.format("%02d", Number.randomIntBetweenTwoNumbers(0, 99)));
+        stringBuffer.append(String.format("%06d", JDefaultNumber.randomIntBetweenTwoNumbers(0, 49999)));
+        stringBuffer.append(String.format("%02d", JDefaultNumber.randomIntBetweenTwoNumbers(0, 99)));
         String numberString = stringBuffer.toString();
 
 

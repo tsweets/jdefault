@@ -3,7 +3,6 @@ package org.beer30.jdefault.sample;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 import org.beer30.jdefault.*;
-import org.beer30.jdefault.Number;
 
 
 /**
@@ -16,20 +15,20 @@ public class Example {
     public static void main(String[] args) {
         Person fakePerson = new Person();
 
-        fakePerson.setFirstName(Name.firstName());
-        fakePerson.setLastName(Name.lastName());
-        fakePerson.setMiddleName(Name.middleName());
-        fakePerson.setSuffix(Name.suffix());
-        fakePerson.setAddress1(Address.streetAddress(true));
-        fakePerson.setCity(Address.city());
-        fakePerson.setState(Address.stateAbbr(false));
-        fakePerson.setPostalCode(Address.zipCode());
-        fakePerson.setSsn(Identity.ssn(true));
-        fakePerson.setEmail(Internet.safeEmail());
-        fakePerson.setQuote(Lorem.sentence());
-        fakePerson.setPhone(PhoneNumber.phoneNumberFormatted());
-        fakePerson.setEmployer(Company.name());
-        fakePerson.setAge(Integer.toString(Number.randomIntBetweenTwoNumbers(18, 40)));
+        fakePerson.setFirstName(JDefaultName.firstName());
+        fakePerson.setLastName(JDefaultName.lastName());
+        fakePerson.setMiddleName(JDefaultName.middleName());
+        fakePerson.setSuffix(JDefaultName.suffix());
+        fakePerson.setAddress1(JDefaultAddress.streetAddress(true));
+        fakePerson.setCity(JDefaultAddress.city());
+        fakePerson.setState(JDefaultAddress.stateAbbr(false));
+        fakePerson.setPostalCode(JDefaultAddress.zipCode());
+        fakePerson.setSsn(JDefaultIdentity.ssn(true));
+        fakePerson.setEmail(JDefaultInternet.safeEmail());
+        fakePerson.setQuote(JDefaultLorem.sentence());
+        fakePerson.setPhone(JDefaultPhoneNumber.phoneNumberFormatted());
+        fakePerson.setEmployer(JDefaultCompany.name());
+        fakePerson.setAge(Integer.toString(JDefaultNumber.randomIntBetweenTwoNumbers(18, 40)));
 
         System.out.println(fakePerson);
     }

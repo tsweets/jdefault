@@ -16,13 +16,17 @@
 
 package org.beer30.jdefault;
 
+import org.apache.commons.lang.math.RandomUtils;
+
 /**
- * Enum of credit card types
- *
  * @author tsweets
- *         Date: 2/15/14
- *         Time: 1:04 PM
+ *         Date: 2/13/14
+ *         Time: 6:05 PM
  */
-public enum CreditCardType {
-    VISA, MASTERCARD, AMEX, DISCOVER;
+public class JDefaultUtils {
+
+    public static <T extends Enum<?>> T randomEnum(Class<T> clazz) {
+        int x = RandomUtils.nextInt(clazz.getEnumConstants().length);
+        return clazz.getEnumConstants()[x];
+    }
 }

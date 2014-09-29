@@ -33,7 +33,7 @@ import java.util.regex.Pattern;
  *         Date: 2/15/14
  *         Time: 12:08 PM
  */
-public class DefaultBase {
+public class JDefaultBase {
 
     private static Map<String, Object> fakeValuesMap;
 
@@ -54,11 +54,11 @@ public class DefaultBase {
      * @return the file's InputStream
      */
     private static InputStream findStream(String filename) {
-        InputStream streamOnClass = Address.class.getResourceAsStream(filename);
+        InputStream streamOnClass = JDefaultAddress.class.getResourceAsStream(filename);
         if (streamOnClass != null) {
             return streamOnClass;
         }
-        InputStream is = Address.class.getClassLoader().getResourceAsStream(filename);
+        InputStream is = JDefaultAddress.class.getClassLoader().getResourceAsStream(filename);
         return is;
     }
 
@@ -106,6 +106,7 @@ public class DefaultBase {
 
     /**
      * Finds map of values based on a key
+     *
      * @param key to lookup
      * @return map of key value pairs
      */
@@ -120,6 +121,7 @@ public class DefaultBase {
 
     /**
      * Replace '#' in a string with random numbers
+     *
      * @param numberString to insert random numbers
      * @return a string with random numbers
      */
@@ -138,6 +140,7 @@ public class DefaultBase {
 
     /**
      * Replace '?' in a string with random letters
+     *
      * @param letterString to insert random letters
      * @return a string with random letters
      */
@@ -156,6 +159,7 @@ public class DefaultBase {
 
     /**
      * Run both numerify and letterfy on a string
+     *
      * @param string to run the replacement on
      * @return replaced string
      */
@@ -167,6 +171,7 @@ public class DefaultBase {
      * Resolve embedded key
      * for example  - "#{name.first_name} #{name.last_name}" is a value for the the key name.name
      * embedded in this value are 2 other keys that need to be resolved
+     *
      * @param key that links to an embedded key
      * @return fully resolved string
      */
@@ -177,6 +182,7 @@ public class DefaultBase {
 
     /**
      * resolves an embedded key
+     *
      * @param value embedded key that has been already fetched
      * @return fully resolved string
      */

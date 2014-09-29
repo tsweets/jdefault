@@ -23,7 +23,7 @@ package org.beer30.jdefault;
  *         Date: 2/15/14
  *         Time: 7:48 PM
  */
-public class Commerce extends DefaultBase {
+public class JDefaultCommerce extends JDefaultBase {
     /**
      * Generates a random color
      *

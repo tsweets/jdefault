@@ -22,47 +22,22 @@ import org.junit.Test;
 
 /**
  * @author tsweets
- *         Date: 2/15/14
- *         Time: 8:14 PM
+ *         Date: 2/16/14
+ *         Time: 6:34 PM
  */
-public class CompanyTest {
+public class JDefaultNumberTest {
     @Test
-    public void testBs() throws Exception {
-        String s = Company.bs();
+    public void testDigit() throws Exception {
+        String s = JDefaultNumber.digit();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("BS: " + s);
-
+        System.out.println("digit: " + s);
     }
 
     @Test
-    public void testCatchPhrase() throws Exception {
-        String s = Company.catchPhrase();
+    public void testNumber() throws Exception {
+        String s = JDefaultNumber.number(10);
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("CP: " + s);
-
-    }
-
-    @Test
-    public void testDunsNumber() throws Exception {
-        String s = Company.dunsNumber();
-        Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println(s);
-
-    }
-
-    @Test
-    public void testName() throws Exception {
-        String s = Company.name();
-        Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println(s);
-
-    }
-
-    @Test
-    public void testSuffix() throws Exception {
-        String s = Company.suffix();
-        Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println(s);
-
+        Assert.assertEquals(10, s.length());
+        System.out.println("number (10): " + s);
     }
 }

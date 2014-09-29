@@ -28,7 +28,7 @@ import java.util.List;
  *         Date: 2/15/14
  *         Time: 8:44 PM
  */
-public class Internet extends DefaultBase {
+public class JDefaultInternet extends JDefaultBase {
 
     /**
      * generates a random domain name (no host)
@@ -61,7 +61,7 @@ public class Internet extends DefaultBase {
      * @return domain word string
      */
     public static String domainWord() {
-        return fixNonWord(Name.lastName().toLowerCase());
+        return fixNonWord(JDefaultName.lastName().toLowerCase());
     }
 
     /**
@@ -117,7 +117,7 @@ public class Internet extends DefaultBase {
      * @return email string
      */
     public static String freeEmail() {
-        return fixNonWord(Name.firstName()) + "@" + fetchString("internet.free_email");
+        return fixNonWord(JDefaultName.firstName()) + "@" + fetchString("internet.free_email");
 
     }
 
@@ -139,13 +139,13 @@ public class Internet extends DefaultBase {
      */
     public static String ipV4Address() {
         StringBuffer sb = new StringBuffer();
-        sb.append(Number.randomIntBetweenTwoNumbers(2, 254) + "");
+        sb.append(JDefaultNumber.randomIntBetweenTwoNumbers(2, 254) + "");
         sb.append(".");
-        sb.append(Number.randomIntBetweenTwoNumbers(2, 254) + "");
+        sb.append(JDefaultNumber.randomIntBetweenTwoNumbers(2, 254) + "");
         sb.append(".");
-        sb.append(Number.randomIntBetweenTwoNumbers(2, 254) + "");
+        sb.append(JDefaultNumber.randomIntBetweenTwoNumbers(2, 254) + "");
         sb.append(".");
-        sb.append(Number.randomIntBetweenTwoNumbers(2, 254) + "");
+        sb.append(JDefaultNumber.randomIntBetweenTwoNumbers(2, 254) + "");
 
         return sb.toString();
 
@@ -158,21 +158,21 @@ public class Internet extends DefaultBase {
      */
     public static String ipV6Address() {
         StringBuffer sb = new StringBuffer();
-        sb.append(String.format("%04X", Number.randomIntBetweenTwoNumbers(1, 65535)));
+        sb.append(String.format("%04X", JDefaultNumber.randomIntBetweenTwoNumbers(1, 65535)));
         sb.append(":");
-        sb.append(String.format("%04X", Number.randomIntBetweenTwoNumbers(1, 65535)));
+        sb.append(String.format("%04X", JDefaultNumber.randomIntBetweenTwoNumbers(1, 65535)));
         sb.append(":");
-        sb.append(String.format("%04X", Number.randomIntBetweenTwoNumbers(1, 65535)));
+        sb.append(String.format("%04X", JDefaultNumber.randomIntBetweenTwoNumbers(1, 65535)));
         sb.append(":");
-        sb.append(String.format("%04X", Number.randomIntBetweenTwoNumbers(1, 65535)));
+        sb.append(String.format("%04X", JDefaultNumber.randomIntBetweenTwoNumbers(1, 65535)));
         sb.append(":");
-        sb.append(String.format("%04X", Number.randomIntBetweenTwoNumbers(1, 65535)));
+        sb.append(String.format("%04X", JDefaultNumber.randomIntBetweenTwoNumbers(1, 65535)));
         sb.append(":");
-        sb.append(String.format("%04X", Number.randomIntBetweenTwoNumbers(1, 65535)));
+        sb.append(String.format("%04X", JDefaultNumber.randomIntBetweenTwoNumbers(1, 65535)));
         sb.append(":");
-        sb.append(String.format("%04X", Number.randomIntBetweenTwoNumbers(1, 65535)));
+        sb.append(String.format("%04X", JDefaultNumber.randomIntBetweenTwoNumbers(1, 65535)));
         sb.append(":");
-        sb.append(String.format("%04X", Number.randomIntBetweenTwoNumbers(1, 65535)));
+        sb.append(String.format("%04X", JDefaultNumber.randomIntBetweenTwoNumbers(1, 65535)));
 
         return sb.toString();
 
@@ -184,7 +184,7 @@ public class Internet extends DefaultBase {
      * @return password string
      */
     public static String password() {
-        return StringUtils.join(Lorem.words(2, false), "");
+        return StringUtils.join(JDefaultLorem.words(2, false), "");
 
     }
 
@@ -197,7 +197,7 @@ public class Internet extends DefaultBase {
      */
     public static String safeEmail() {
         String[] tld = {"org", "net", "com"};
-        return userName() + "@" + "example." + tld[Number.randomIntBetweenTwoNumbers(0, 2)];
+        return userName() + "@" + "example." + tld[JDefaultNumber.randomIntBetweenTwoNumbers(0, 2)];
 
     }
 
@@ -219,6 +219,6 @@ public class Internet extends DefaultBase {
      * @return
      */
     public static String userName() {
-        return fixNonWord(StringUtils.left(Name.firstName(), 1).toLowerCase() + Name.lastName().toLowerCase() + Number.randomNumberString(2));
+        return fixNonWord(StringUtils.left(JDefaultName.firstName(), 1).toLowerCase() + JDefaultName.lastName().toLowerCase() + JDefaultNumber.randomNumberString(2));
     }
 }

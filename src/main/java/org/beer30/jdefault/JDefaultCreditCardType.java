@@ -16,20 +16,13 @@
 
 package org.beer30.jdefault;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 /**
+ * Enum of credit card types
+ *
  * @author tsweets
  *         Date: 2/15/14
- *         Time: 7:14 PM
+ *         Time: 1:04 PM
  */
-public class CodeTest {
-    @Test
-    public void testIsbn() throws Exception {
-
-        String code = Code.isbn();
-        Assert.assertEquals(13,code.length());
-        System.out.println(code);
-    }
+public enum JDefaultCreditCardType {
+    VISA, MASTERCARD, AMEX, DISCOVER;
 }

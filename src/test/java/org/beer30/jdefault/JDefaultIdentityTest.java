@@ -16,34 +16,34 @@
 
 package org.beer30.jdefault;
 
-import org.apache.commons.lang.StringUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
  * @author tsweets
  *         Date: 2/15/14
- *         Time: 7:50 PM
+ *         Time: 12:00 PM
  */
-public class CommerceTest {
+public class JDefaultIdentityTest {
     @Test
-    public void testColor() throws Exception {
-        String s = Commerce.color();
-        Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println(s);
+    public void testSsn() throws Exception {
+        String s1 = JDefaultIdentity.ssn();
+        String s2 = JDefaultIdentity.ssn(false);
+        String s3 = JDefaultIdentity.ssn(true);
+
+        Assert.assertEquals(9, s1.length());
+        Assert.assertEquals(9, s2.length());
+        Assert.assertEquals(11, s3.length());
+
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
     }
 
     @Test
-    public void testDepartment() throws Exception {
-        String s = Commerce.department();
-        Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println(s);
-    }
-
-    @Test
-    public void testProductName() throws Exception {
-        String s = Commerce.productName();
-        Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println(s);
+    public void testDriversLicense() throws Exception {
+        String s1 = JDefaultIdentity.driversLicense();
+        Assert.assertEquals(11, s1.length());
+        System.out.println(s1);
     }
 }

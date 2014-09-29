@@ -23,7 +23,7 @@ package org.beer30.jdefault;
  *         Date: 2/11/14
  *         Time: 9:55 PM
  */
-public class Identity {
+public class JDefaultIdentity {
 
     /**
      * un-formatted random SSN
@@ -42,13 +42,13 @@ public class Identity {
      */
     public static String ssn(boolean formatted) {
         if (!formatted) {
-            return Number.randomNumberString(9);
+            return JDefaultNumber.randomNumberString(9);
         } else {
-            StringBuffer ssnString = new StringBuffer(Number.randomNumberString(3));
+            StringBuffer ssnString = new StringBuffer(JDefaultNumber.randomNumberString(3));
             ssnString.append("-");
-            ssnString.append(Number.randomNumberString(2));
+            ssnString.append(JDefaultNumber.randomNumberString(2));
             ssnString.append("-");
-            ssnString.append(Number.randomNumberString(4));
+            ssnString.append(JDefaultNumber.randomNumberString(4));
             return ssnString.toString();
         }
 
@@ -61,9 +61,9 @@ public class Identity {
      * @return driver's license string
      */
     public static String driversLicense() {
-        StringBuffer dl = new StringBuffer(Address.stateAbbr());
+        StringBuffer dl = new StringBuffer(JDefaultAddress.stateAbbr());
         dl.append("-");
-        dl.append(Number.randomNumberString(8));
+        dl.append(JDefaultNumber.randomNumberString(8));
 
         return dl.toString();
     }

@@ -25,53 +25,53 @@ import org.junit.Test;
  *         Date: 2/16/14
  *         Time: 5:03 PM
  */
-public class NameTest {
+public class JDefaultNameTest {
     @Test
     public void testFirstName() throws Exception {
-        String s = Name.firstName();
+        String s = JDefaultName.firstName();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("firstName: " +s);
+        System.out.println("firstName: " + s);
     }
 
     @Test
     public void testMiddleName() throws Exception {
-        String s = Name.middleName();
+        String s = JDefaultName.middleName();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("middleName: " +s);
+        System.out.println("middleName: " + s);
     }
 
     @Test
     public void testLastName() throws Exception {
-        String s = Name.lastName();
+        String s = JDefaultName.lastName();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("lastName: " +s);
+        System.out.println("lastName: " + s);
     }
 
     @Test
     public void testName() throws Exception {
-        String s = Name.name();
+        String s = JDefaultName.name();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("name: " +s);
+        System.out.println("name: " + s);
     }
 
     @Test
     public void testPrefix() throws Exception {
-        String s = Name.prefix();
+        String s = JDefaultName.prefix();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("prefix: " +s);
+        System.out.println("prefix: " + s);
     }
 
     @Test
     public void testSuffix() throws Exception {
-        String s = Name.suffix();
+        String s = JDefaultName.suffix();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("suffix: " +s);
+        System.out.println("suffix: " + s);
     }
 
     @Test
     public void testTitle() throws Exception {
-        String s = Name.title();
+        String s = JDefaultName.title();
         Assert.assertTrue(StringUtils.isNotEmpty(s));
-        System.out.println("title: " +s);
+        System.out.println("title: " + s);
     }
 }

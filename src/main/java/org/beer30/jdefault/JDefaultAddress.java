@@ -25,7 +25,7 @@ import org.apache.commons.lang.math.RandomUtils;
  *         Date: 2/10/14
  *         Time: 6:11 PM
  */
-public class Address extends DefaultBase {
+public class JDefaultAddress extends JDefaultBase {
 
     /**
      * random 3-5 digit number for appending to a street
@@ -207,7 +207,7 @@ public class Address extends DefaultBase {
         if (randomFormat) {
             return bothify(fetchString("address.postcode"));
         } else {
-            return Number.randomNumberString(5);
+            return JDefaultNumber.randomNumberString(5);
         }
     }
 }

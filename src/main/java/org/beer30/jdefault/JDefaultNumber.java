@@ -21,11 +21,12 @@ import org.apache.commons.lang.math.RandomUtils;
 
 /**
  * random number generator
+ *
  * @author tsweets
  *         Date: 2/16/14
  *         Time: 5:08 PM
  */
-public class Number {
+public class JDefaultNumber {
 
     /**
      * random number 0 to 9
@@ -38,6 +39,7 @@ public class Number {
 
     /**
      * random number string without 0 being possible as the first digit
+     *
      * @param numberOfDigits length of string
      * @return number string
      */
@@ -55,7 +57,7 @@ public class Number {
 
 
         char[] chars = "123456789".toCharArray();
-        String secondHalf = RandomStringUtils.random(numberOfDigits-1, 0, 8, false, false, chars);
+        String secondHalf = RandomStringUtils.random(numberOfDigits - 1, 0, 8, false, false, chars);
         return sb.append(secondHalf).toString();
     }
 

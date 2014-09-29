@@ -23,7 +23,7 @@ package org.beer30.jdefault;
  *         Date: 2/16/14
  *         Time: 4:59 PM
  */
-public class Name extends DefaultBase {
+public class JDefaultName extends JDefaultBase {
 
     /**
      * generates a random first name

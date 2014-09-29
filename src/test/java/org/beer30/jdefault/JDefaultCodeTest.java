@@ -22,28 +22,14 @@ import org.junit.Test;
 /**
  * @author tsweets
  *         Date: 2/15/14
- *         Time: 12:00 PM
+ *         Time: 7:14 PM
  */
-public class IdentityTest {
+public class JDefaultCodeTest {
     @Test
-    public void testSsn() throws Exception {
-        String s1 = Identity.ssn();
-        String s2 = Identity.ssn(false);
-        String s3 = Identity.ssn(true);
+    public void testIsbn() throws Exception {
 
-        Assert.assertEquals(9,s1.length());
-        Assert.assertEquals(9,s2.length());
-        Assert.assertEquals(11,s3.length());
-
-        System.out.println(s1);
-        System.out.println(s2);
-        System.out.println(s3);
-    }
-
-    @Test
-    public void testDriversLicense() throws Exception {
-        String s1 =Identity.driversLicense();
-        Assert.assertEquals(11,s1.length());
-        System.out.println(s1);
+        String code = JDefaultCode.isbn();
+        Assert.assertEquals(13, code.length());
+        System.out.println(code);
     }
 }
