@@ -26,6 +26,13 @@ import org.junit.Test;
  *         Time: 7:06 PM
  */
 public class JDefaultInternetTest {
+
+    @Test
+    public void testFixNonWord() throws Exception {
+        String s = "~`!@#$%^&*()+=_-{}[]|\\:;\"'<>,.?/REALWORD";
+        Assert.assertEquals("REALWORD", JDefaultInternet.fixNonWord(s));
+    }
+
     @Test
     public void testDomainName() throws Exception {
         String s = JDefaultInternet.domainName();
